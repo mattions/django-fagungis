@@ -412,11 +412,11 @@ def _upload_supervisord_conf():
 
 def _prepare_django_project():
     with cd(env.django_project_root):
-        virtenvrun('./manage.py syncdb --noinput --verbosity=1')
+        virtenvrun('python manage.py syncdb --noinput --verbosity=1')
         if env.south_used:
-            virtenvrun('./manage.py migrate --noinput --verbosity=1')
-        virtenvsudo('./manage.py collectstatic --noinput')
-        virtenvsudo('./manage.py installtasks --noinput')
+            virtenvrun('python manage.py migrate --noinput --verbosity=1')
+        virtenvsudo('python manage.py collectstatic --noinput')
+        virtenvsudo('python manage.py installtasks --noinput')
 
 
 def _prepare_media_path():
