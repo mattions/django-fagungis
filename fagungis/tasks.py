@@ -416,6 +416,7 @@ def _prepare_django_project():
         if env.south_used:
             virtenvrun('./manage.py migrate --noinput --verbosity=1')
         virtenvsudo('./manage.py collectstatic --noinput')
+        virtenvsudo('./manage.py installtasks --noinput')
 
 
 def _prepare_media_path():
