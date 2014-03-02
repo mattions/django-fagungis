@@ -87,7 +87,7 @@ def _pull():
         if env.vcs == 'hg':
             sudo('hg pull -u')
         elif env.vcs == 'git':
-            run ('sudo -E git pull -u')
+            sudo('git pull -u')
 
 
 @task
